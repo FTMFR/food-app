@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
-
 import CartContext from './cart-context';
+
 
 const defaultCartState = {
   items: [],
@@ -15,6 +15,7 @@ const cartReducer = (state, action) => {
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.item.id
     );
+
     const existingCartItem = state.items[existingCartItemIndex];
     let updatedItems;
 
@@ -54,6 +55,7 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount
     };
   }
+  
 
   return defaultCartState;
 };
