@@ -5,10 +5,12 @@ import styles from './HeaderCartButton.module.css';
 
 
 const HeaderCartButton = (props) => {
-    const cartCTX = useContext(CartContext);
+    const cartCtx = useContext(CartContext);
 
-    const numberOfCartItems = cartCTX.items.reduce((currentNumber, item) => {
-        return currentNumber + item.amount;
+    const { items } = cartCtx;
+
+    const numberOfCartItems = items.reduce((curNumber, item) => {
+        return curNumber + item.amount;
     }, 0);
 
     return (
@@ -27,4 +29,6 @@ const HeaderCartButton = (props) => {
 };
 
 
-export default HeaderCartButton
+export default HeaderCartButton;
+
+
